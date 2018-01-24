@@ -29,7 +29,10 @@ export default class Create extends Component {
     const password = this.randomString();
     const payload = sjcl.encrypt(password, this.state.secret);
     this.setState({ loading: true, error: "" });
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/secret`, {
+    const url = process.env.REACT_APP_BACKEND_URL
+      ? `${process.env.REACT_APP_BACKEND_URL}/secret`
+      : "/secret";
+    fetch(url, {
       method: "POST",
       body: JSON.stringify({
         secret: payload,

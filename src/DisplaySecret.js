@@ -25,11 +25,10 @@ export default class CreateForm extends Component {
   }
   decrypt() {
     this.setState({ loading: true, displayForm: false });
-    fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/secret/${
-        this.props.match.params.key
-      }`
-    )
+    const url = process.env.REACT_APP_BACKEND_URL
+      ? `${process.env.REACT_APP_BACKEND_URL}/secret`
+      : "/secret";
+    fetch(`${url}/${this.props.match.params.key}`)
       .then(r => {
         if (r.status !== 200) {
           this.setState({
