@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Navbar, NavbarBrand, Container, Row, Col } from "reactstrap";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Create from "./Create";
 import CreateResult from "./CreateResult";
 import DisplaySecret from "./DisplaySecret";

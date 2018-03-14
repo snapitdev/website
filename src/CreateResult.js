@@ -6,7 +6,7 @@ export default class Create extends Component {
   constructor(props) {
     super(props);
     if (!this.props.location.state) return;
-    const base_url = `${window.location.protocol}//${window.location.host}/s`;
+    const base_url = `${window.location.protocol}//${window.location.host}/#/s`;
     const short_url = `${base_url}/${this.props.location.state.key}`;
     const full_url = `${short_url}/${this.props.location.state.password}`;
     this.state = {
